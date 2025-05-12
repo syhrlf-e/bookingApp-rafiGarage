@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafi Garage - Booking Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 p-4">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+      <div class="bg-red-600 px-6 py-4 rounded-t-xl">
+        <h1 class="text-white text-2xl font-semibold">Rafi Garage</h1>
+      </div>
+      <div class="p-6">
+        <button
+          class="w-full border-2 border-red-600 text-red-600 font-semibold py-2 rounded-full mb-6"
+        >
+          Booking Service
+        </button>
+        <form id="bookingForm" class="space-y-4">
+          <div>
+            <label class="block text-gray-700">Masukan Nama</label>
+            <input
+              type="text"
+              id="nama"
+              required
+              class="mt-1 block w-full border rounded px-3 py-2"
+            />
+          </div>
+          <div class="flex space-x-2">
+            <div class="flex-1">
+              <label class="block text-gray-700">Tanggal</label>
+              <input
+                type="date"
+                id="tanggal"
+                required
+                class="mt-1 block w-full border rounded px-3 py-2"
+              />
+            </div>
+            <div class="flex-1">
+              <label class="block text-gray-700">Jam</label>
+              <input
+                type="time"
+                id="jam"
+                required
+                class="mt-1 block w-full border rounded px-3 py-2"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700">Plat Nomor</label>
+            <div class="flex space-x-2 mt-1">
+              <input
+                type="text"
+                id="plat1"
+                maxlength="1"
+                required
+                class="w-12 border rounded px-2 py-2 text-center uppercase"
+              />
+              <input
+                type="text"
+                id="plat2"
+                maxlength="4"
+                required
+                class="flex-1 border rounded px-3 py-2 text-center"
+              />
+              <input
+                type="text"
+                id="plat3"
+                maxlength="3"
+                required
+                class="w-20 border rounded px-2 py-2 text-center uppercase"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700">Sepeda Motor</label>
+            <input
+              type="text"
+              id="motor"
+              required
+              class="mt-1 block w-full border rounded px-3 py-2"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700">Keluhan</label>
+            <textarea
+              id="keluhan"
+              rows="4"
+              required
+              class="mt-1 block w-full border rounded px-3 py-2"
+            ></textarea>
+          </div>
+          <div>
+            <label class="block text-gray-700"
+              >Saran dari mekanik sebelumnya</label
+            >
+            <textarea
+              id="saran"
+              rows="3"
+              class="mt-1 block w-full border rounded px-3 py-2"
+            ></textarea>
+          </div>
+          <div class="flex items-center">
+            <input
+              type="checkbox"
+              id="agree"
+              class="h-4 w-4 text-red-600"
+              required
+            />
+            <label for="agree" class="ml-2 text-gray-600 text-sm">
+              Dengan anda mengisi form diatas maka anda telah setuju untuk
+              melakukan booking dijadwal yang sudah anda tentukan sendiri.
+              Keamanan data bisa dijamin.
+            </label>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-red-600 text-white font-semibold py-2 rounded-full"
+          >
+            Booking Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const platRules = [
+        { id: "plat1", regex: /[^A-Za-z]/g },
+        { id: "plat2", regex: /[^0-9]/g },
+        { id: "plat3", regex: /[^A-Za-z]/g },
+      ];
+      platRules.forEach((rule) => {
+        const el = document.getElementById(rule.id);
+        el.addEventListener("input", () => {
+          el.value = el.value.replace(rule.regex, "").toUpperCase();
+        });
+      });
+
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const nama = document.getElementById("nama").value;
+          const tanggal = document.getElementById("tanggal").value;
+          const jam = document.getElementById("jam").value;
+          const plat = `${document.getElementById("plat1").value} ${
+            document.getElementById("plat2").value
+          } ${document.getElementById("plat3").value}`;
+          const motor = document.getElementById("motor").value;
+          const keluhan = document.getElementById("keluhan").value;
+          const saran = document.getElementById("saran").value;
+
+          let msg = `Terimakasih sudah memilih Rafi Garage untuk kesehatan motor Anda.\n\n`;
+          msg += `Dibawah ini adalah bukti booking saya :\n\n`;
+          msg += `*Nama:* *${encodeURIComponent(nama)}*\n`;
+          msg += `*Tanggal & Jam:* *${tanggal} / ${jam}*\n`;
+          msg += `*Plat Nomor:* *${plat}*\n`;
+          msg += `*Sepeda Motor:* *${encodeURIComponent(motor)}*\n`;
+          msg += `*Keluhan:* ${keluhan}\n`;
+          msg += `*Saran Sebelumnya:* ${saran}\n\n`;
+          msg += `Pilihan tepat service motor Anda di Rafi Garage, motor sehat, dompet pun tetap sehat.`;
+
+          const sendMsg = encodeURIComponent(msg);
+
+          const admin = "628817415303";
+          const waUrl = `https://wa.me/${admin}?text=${sendMsg}`;
+
+          window.location.href = waUrl;
+        });
+    </script>
+  </body>
+</html>

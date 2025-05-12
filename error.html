@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Under Construction</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div id="container" class="text-center p-8 bg-white rounded-2xl shadow-xl">
+      <h1 id="error-code" class="text-6xl font-extrabold text-red-700 mb-4">
+        404
+      </h1>
+      <p id="message" class="text-xl text-gray-700">
+        Sedang dalam pengerjaan lanjutan
+      </p>
+    </div>
+
+    <script>
+      // Contoh JavaScript sederhana:
+      // Kalo mau ganti teks atau tambahin efek, bisa di sini.
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("Halaman 404 under construction loaded.");
+        // Misal: setelah 5 detik ubah pesan:
+        setTimeout(() => {
+          document.getElementById("message").textContent =
+            "Mohon kembali nanti ya!";
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

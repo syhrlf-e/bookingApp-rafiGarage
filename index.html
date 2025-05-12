@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafi Garage - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      .carousel-container {
+        overflow: hidden;
+      }
+
+      #carousel-track {
+        display: flex;
+        width: 300%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      #carousel-track img {
+        width: 100%;
+        flex-shrink: 0;
+        height: 16rem;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-20">
+      <div class="max-w-4xl mx-auto flex items-center justify-between p-4">
+        <img src="./asset/logoRafiGarage.png" alt="Rafi Garage" class="h-6" />
+        <button id="hamburger" class="md:hidden focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <!-- Desktop nav placeholder -->
+        <nav class="hidden md:flex space-x-6">
+          <!-- future links -->
+        </nav>
+      </div>
+      <!-- Sidebar mobile -->
+      <div
+        id="sidebar"
+        class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform"
+      >
+        <!-- empty for now -->
+      </div>
+    </header>
+
+    <main class="pt-20 space-y-12">
+      <!-- Discount Banner -->
+      <section class="bg-red-600 text-white text-center py-2">
+        <p>Diskon hingga 30% untuk pelanggan baru. Lihat detail</p>
+      </section>
+
+      <!-- Carousel -->
+      <section
+        class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6 carousel-container"
+      >
+        <div id="carousel-track">
+          <img src="./asset/c1.jpg" class="w-full object-cover h-64" />
+          <img src="./asset/c2.jpg" class="w-full object-cover h-64" />
+          <img src="./asset/c3.jpg" class="w-full object-cover h-64" />
+        </div>
+      </section>
+
+      <!-- Layanan -->
+      <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Layanan</h2>
+        <p class="text-gray-600 mb-4">
+          Nikmati setiap layanan yang kami tawarkan kepada Anda
+        </p>
+        <div class="flex space-x-4">
+          <button
+            id="btn-booking"
+            class="flex-1 bg-blue-100 text-blue-700 py-4 rounded-lg flex flex-col items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mb-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1 4v1m0-1H9m6 0h-1v-4h-1m1 4v1m0-1h-1M5 8h14M5 8l2-2m0 0h10l2 2M7 6v12"
+              />
+            </svg>
+            Booking Service
+          </button>
+          <button
+            id="btn-soon"
+            class="flex-1 bg-gray-200 text-gray-500 py-4 rounded-lg"
+          >
+            Coming Soon
+          </button>
+        </div>
+      </section>
+
+      <!-- Spare Part -->
+      <section class="max-w-4xl mx-auto">
+        <h2 class="text-xl font-semibold mb-2">
+          Pilih Spare Part Yang Anda Butuhkan
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Kami menawarkan banyak sekali spare part ori untuk kebutuhan motor
+          Anda
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <!-- Placeholder items -->
+          <div class="bg-white shadow rounded-lg p-4 text-center">
+            <img
+              src="assets/placeholder.png"
+              class="mx-auto h-24 mb-2"
+              alt=""
+            />
+            <p class="font-medium">Nama Part</p>
+            <p class="text-gray-500">Rp. XX.XXX</p>
+          </div>
+          <div class="bg-white shadow rounded-lg p-4 text-center">
+            <img
+              src="assets/placeholder.png"
+              class="mx-auto h-24 mb-2"
+              alt=""
+            />
+            <p class="font-medium">Nama Part</p>
+            <p class="text-gray-500">Rp. XX.XXX</p>
+          </div>
+          <div class="bg-white shadow rounded-lg p-4 text-center">
+            <img
+              src="assets/placeholder.png"
+              class="mx-auto h-24 mb-2"
+              alt=""
+            />
+            <p class="font-medium">Nama Part</p>
+            <p class="text-gray-500">Rp. XX.XXX</p>
+          </div>
+          <div class="bg-white shadow rounded-lg p-4 text-center">
+            <img
+              src="assets/placeholder.png"
+              class="mx-auto h-24 mb-2"
+              alt=""
+            />
+            <p class="font-medium">Nama Part</p>
+            <p class="text-gray-500">Rp. XX.XXX</p>
+          </div>
+          <div class="bg-white shadow rounded-lg p-4 text-center">
+            <img
+              src="assets/placeholder.png"
+              class="mx-auto h-24 mb-2"
+              alt=""
+            />
+            <p class="font-medium">Nama Part</p>
+            <p class="text-gray-500">Rp. XX.XXX</p>
+          </div>
+          <div class="bg-white shadow rounded-lg p-4 text-center">
+            <img
+              src="assets/placeholder.png"
+              class="mx-auto h-24 mb-2"
+              alt=""
+            />
+            <p class="font-medium">Nama Part</p>
+            <p class="text-gray-500">Rp. XX.XXX</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2">Tentang Kami</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Rafi Garage adalah solusi otomotif terpercaya yang hadir untuk
+          memenuhi semua kebutuhan kendaraan Anda — mulai dari servis rutin,
+          perbaikan ringan hingga berat, booking service online, hingga
+          penjualan spare part original dan berkualitas. Kami percaya bahwa
+          merawat kendaraan tidak harus merepotkan...
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-red-600 text-white text-center py-4">
+        <p>&copy; 2025 Rafi Garage - syhrl.FnD</p>
+      </footer>
+    </main>
+
+    <script>
+      // Hamburger toggle
+      document.getElementById("hamburger").addEventListener("click", () => {
+        const sb = document.getElementById("sidebar");
+        sb.classList.toggle("-translate-x-full");
+      });
+
+      // Carousel auto-slide
+      let currentIndex = 0;
+      const track = document.getElementById("carousel-track");
+      const total = track.children.length;
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % total;
+        track.style.transform = "translateX(-$(currentIndex * 100)%)";
+      }, 3000);
+
+      // Layanan buttons
+      document.getElementById("btn-booking").addEventListener("click", () => {
+        window.location.href = "booking.html";
+      });
+      document.getElementById("btn-soon").addEventListener("click", () => {
+        Swal.fire({
+          icon: "info",
+          text: "Fitur belum tersedia",
+          confirmButtonText: "OK",
+        });
+      });
+    </script>
+  </body>
+</html>
