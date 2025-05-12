@@ -6,7 +6,23 @@
     <title>Rafi Garage - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .customFont {
+        font-family: "Montserrat", sans-serif;
+      }
+
       .carousel-container {
         overflow: hidden;
       }
@@ -26,8 +42,7 @@
     </style>
   </head>
   <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md fixed w-full z-20">
+    <header class="bg-white shadow-md w-full z-20">
       <div class="max-w-4xl mx-auto flex items-center justify-between p-4">
         <img src="./asset/logoRafiGarage.png" alt="Rafi Garage" class="h-6" />
         <button id="hamburger" class="md:hidden focus:outline-none">
@@ -46,7 +61,6 @@
             />
           </svg>
         </button>
-        <!-- Desktop nav placeholder -->
         <nav class="hidden md:flex space-x-6">
           <!-- future links -->
         </nav>
@@ -60,16 +74,16 @@
       </div>
     </header>
 
-    <main class="pt-20 space-y-12">
+    <main class="pt-0 space-y-0">
       <!-- Discount Banner -->
       <section class="bg-red-600 text-white text-center py-2">
-        <p>Diskon hingga 30% untuk pelanggan baru. Lihat detail</p>
+        <p class="customFont text-sm">
+          Diskon hingga 30% untuk pelanggan baru. Lihat detail
+        </p>
       </section>
 
       <!-- Carousel -->
-      <section
-        class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6 carousel-container"
-      >
+      <section class="max-w-4xl mx-auto carousel-container">
         <div id="carousel-track">
           <img src="./asset/c1.jpg" class="w-full object-cover h-64" />
           <img src="./asset/c2.jpg" class="w-full object-cover h-64" />
@@ -77,114 +91,73 @@
         </div>
       </section>
 
-      <!-- Layanan -->
       <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6">
-        <h2 class="text-xl font-semibold mb-2">Layanan</h2>
-        <p class="text-gray-600 mb-4">
+        <h2 class="text-2xl font-bold mb-2 customFont">Layanan</h2>
+        <p class="text-gray-600 mb-4 customFont text-base customFont">
           Nikmati setiap layanan yang kami tawarkan kepada Anda
         </p>
         <div class="flex space-x-4">
           <button
             id="btn-booking"
-            class="flex-1 bg-blue-100 text-blue-700 py-4 rounded-lg flex flex-col items-center"
+            class="flex-1 bg-blue-100 text-blue-700 py-4 rounded-lg flex flex-col items-center customFont text-xl font-semibold"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8 mb-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 16h-1v-4h-1m1 4v1m0-1H9m6 0h-1v-4h-1m1 4v1m0-1h-1M5 8h14M5 8l2-2m0 0h10l2 2M7 6v12"
-              />
-            </svg>
+            <img src="./asset/bookingLogo.png" alt="" class="h-10" />
             Booking Service
           </button>
           <button
             id="btn-soon"
-            class="flex-1 bg-gray-200 text-gray-500 py-4 rounded-lg"
+            class="flex-1 bg-gray-200 text-gray-500 py-4 rounded-lg customFont font-bold"
           >
             Coming Soon
           </button>
         </div>
       </section>
 
-      <!-- Spare Part -->
-      <section class="max-w-4xl mx-auto">
-        <h2 class="text-xl font-semibold mb-2">
+      <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl mb-2 customFont font-bold">
           Pilih Spare Part Yang Anda Butuhkan
         </h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-600 mb-4 customFont text-base">
           Kami menawarkan banyak sekali spare part ori untuk kebutuhan motor
           Anda
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          <!-- Placeholder items -->
           <div class="bg-white shadow rounded-lg p-4 text-center">
-            <img
-              src="assets/placeholder.png"
-              class="mx-auto h-24 mb-2"
-              alt=""
-            />
-            <p class="font-medium">Nama Part</p>
-            <p class="text-gray-500">Rp. XX.XXX</p>
+            <img src="./asset/gambarOli.png" class="mx-auto h-24 mb-2" alt="" />
+            <p class="font-medium customFont">Nama Part</p>
+            <p class="text-gray-500 customFont">Rp. XX.XXX</p>
           </div>
           <div class="bg-white shadow rounded-lg p-4 text-center">
-            <img
-              src="assets/placeholder.png"
-              class="mx-auto h-24 mb-2"
-              alt=""
-            />
-            <p class="font-medium">Nama Part</p>
-            <p class="text-gray-500">Rp. XX.XXX</p>
+            <img src="./asset/gambarOli.png" class="mx-auto h-24 mb-2" alt="" />
+            <p class="font-medium customFont">Nama Part</p>
+            <p class="text-gray-500 customFont">Rp. XX.XXX</p>
           </div>
           <div class="bg-white shadow rounded-lg p-4 text-center">
-            <img
-              src="assets/placeholder.png"
-              class="mx-auto h-24 mb-2"
-              alt=""
-            />
-            <p class="font-medium">Nama Part</p>
-            <p class="text-gray-500">Rp. XX.XXX</p>
+            <img src="./asset/gambarOli.png" class="mx-auto h-24 mb-2" alt="" />
+            <p class="font-medium customFont">Nama Part</p>
+            <p class="text-gray-500 customFont">Rp. XX.XXX</p>
           </div>
           <div class="bg-white shadow rounded-lg p-4 text-center">
-            <img
-              src="assets/placeholder.png"
-              class="mx-auto h-24 mb-2"
-              alt=""
-            />
-            <p class="font-medium">Nama Part</p>
-            <p class="text-gray-500">Rp. XX.XXX</p>
+            <img src="./asset/gambarOli.png" class="mx-auto h-24 mb-2" alt="" />
+            <p class="font-medium customFont">Nama Part</p>
+            <p class="text-gray-500 customFont">Rp. XX.XXX</p>
           </div>
           <div class="bg-white shadow rounded-lg p-4 text-center">
-            <img
-              src="assets/placeholder.png"
-              class="mx-auto h-24 mb-2"
-              alt=""
-            />
-            <p class="font-medium">Nama Part</p>
-            <p class="text-gray-500">Rp. XX.XXX</p>
+            <img src="./asset/gambarOli.png" class="mx-auto h-24 mb-2" alt="" />
+            <p class="font-medium customFont">Nama Part</p>
+            <p class="text-gray-500 customFont">Rp. XX.XXX</p>
           </div>
           <div class="bg-white shadow rounded-lg p-4 text-center">
-            <img
-              src="assets/placeholder.png"
-              class="mx-auto h-24 mb-2"
-              alt=""
-            />
-            <p class="font-medium">Nama Part</p>
-            <p class="text-gray-500">Rp. XX.XXX</p>
+            <img src="./asset/gambarOli.png" class="mx-auto h-24 mb-2" alt="" />
+            <p class="font-medium customFont">Nama Part</p>
+            <p class="text-gray-500 customFont">Rp. XX.XXX</p>
           </div>
         </div>
       </section>
 
-      <!-- About Us -->
       <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-6">
         <h2 class="text-xl font-semibold mb-2">Tentang Kami</h2>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 leading-relaxed customFont">
           Rafi Garage adalah solusi otomotif terpercaya yang hadir untuk
           memenuhi semua kebutuhan kendaraan Anda — mulai dari servis rutin,
           perbaikan ringan hingga berat, booking service online, hingga
@@ -193,29 +166,25 @@
         </p>
       </section>
 
-      <!-- Footer -->
       <footer class="bg-red-600 text-white text-center py-4">
-        <p>&copy; 2025 Rafi Garage - syhrl.FnD</p>
+        <p class="customFont">&copy; 2025 Rafi Garage - syhrl.FnD</p>
       </footer>
     </main>
 
     <script>
-      // Hamburger toggle
       document.getElementById("hamburger").addEventListener("click", () => {
         const sb = document.getElementById("sidebar");
         sb.classList.toggle("-translate-x-full");
       });
 
-      // Carousel auto-slide
       let currentIndex = 0;
       const track = document.getElementById("carousel-track");
       const total = track.children.length;
       setInterval(() => {
         currentIndex = (currentIndex + 1) % total;
-        track.style.transform = "translateX(-$(currentIndex * 100)%)";
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
       }, 3000);
 
-      // Layanan buttons
       document.getElementById("btn-booking").addEventListener("click", () => {
         window.location.href = "booking.html";
       });
